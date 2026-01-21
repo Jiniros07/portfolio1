@@ -49,6 +49,46 @@ button {
   transition: all 0.3s ease;
 }
 
+/* Profile Image */
+.profile-image-nav {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-image-nav img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid #3b82f6;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.2);
+  transition: all 0.3s ease;
+}
+
+.profile-image-nav img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 20px rgba(59, 130, 246, 0.4);
+}
+
+.profile-name {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-name h2 {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.profile-name p {
+  font-size: 0.75rem;
+  color: #666666;
+  margin: 0;
+}
+
 /* Animations */
 @keyframes gradient {
   0% {

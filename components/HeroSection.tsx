@@ -8,7 +8,7 @@ export default function HeroSection() {
     >
       <div className="max-w-4xl mx-auto text-center animate-slideInUp">
         {/* Greeting */}
-        <p className="text-accent font-semibold mb-4 text-lg">Hi! I'm Genie Rose Castillo. Welcome to my portfolio</p>
+        <p className="text-accent font-semibold mb-4 text-lg">Hello! Welcome to my portfolio!</p>
 
         {/* Hero Statement */}
         <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
@@ -18,8 +18,11 @@ export default function HeroSection() {
 
         {/* Subtitle */}
         <p className="text-xl md:text-2xl text-gray-300 mb-8 leading-relaxed">
-          I'm a full-stack developer passionate about creating intuitive interfaces and robust solutions 
-          that make an impact. I believe in building products that are both beautiful and functional.
+         I’m an IT Specialist and Full-Stack Developer passionate about turning complex problems into intuitive digital solutions. With a keen eye for detail and a drive for innovation, I build web applications that are not only visually stunning but also user-friendly and accessible.
+
+From front-end design that delights users to back-end systems that power seamless functionality, I specialize in creating experiences that bridge the gap between technology and people. Whether it’s optimizing performance, enhancing security, or implementing scalable solutions, I strive to deliver quality that makes an impact.
+
+Let’s build something amazing together.
         </p>
 
         {/* CTA Buttons */}

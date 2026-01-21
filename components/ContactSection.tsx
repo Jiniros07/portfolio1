@@ -51,19 +51,19 @@ export default function ContactSection() {
             {
               icon: "✉️",
               title: "Email",
-              value: "hello@example.com",
-              link: "mailto:hello@example.com",
+              value: "genierosecastillo@example.com",
+              link: "mailto:genierosecastillo@example.com",
             },
             {
               icon: "💼",
               title: "LinkedIn",
-              value: "linkedin.com/in/yourprofile",
+              value: "linkedin.com/in/genierosecastillo",
               link: "#",
             },
             {
               icon: "🐙",
               title: "GitHub",
-              value: "github.com/yourprofile",
+              value: "github.com/castillo0507",
               link: "#",
             },
           ].map((method, index) => (
@@ -149,8 +149,8 @@ export default function ContactSection() {
 
         {/* Footer */}
         <div className="mt-16 pt-8 border-t border-gray-800 text-center text-gray-400">
-          <p>© 2024 Your Name. All rights reserved.</p>
-          <p className="text-sm mt-2">Built with Next.js, React, and Tailwind CSS</p>
+          <p>© 2026 Genie Rose Castillo-IT31. All Rights Reserved.</p>
+          <p className="text-sm mt-2">IT 381 - Application Development and Emerging Technologies</p>
         </div>
       </div>
     </section>

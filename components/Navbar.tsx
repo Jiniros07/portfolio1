@@ -22,10 +22,18 @@ export default function Navbar() {
     <nav className="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
-          {/* Logo */}
-          <Link href="#home" className="text-2xl font-bold text-primary hover:text-accent transition-colors">
-            Portfolio
-          </Link>
+          {/* Logo with Profile */}
+          <div className="profile-image-nav">
+            <img 
+              src="/profile.jpg" 
+              alt="Genie Rose Castillo" 
+              title="Profile Picture"
+            />
+            <div className="profile-name">
+              <h2>Genie Rose Castillo</h2>
+              <p>IT Specialist, Full Stack Developer</p>
+            </div>
+          </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-8">
