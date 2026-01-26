@@ -34,7 +34,7 @@ const PROJECTS: Project[] = [
     tags: ["Next.js", "TypeScript", "Tailwind CSS", "OpenAI API"],
     link: "#",
     demoLink: "#",
-    image: "https://images.unsplash.com/photo-1677442d019cecf8971360fc87f65dfa50d624ac9?w=500&h=300&fit=crop",
+    image: "https://dotsolved.com/wp-content/uploads/2024/09/7-AI-Powered-Automations-to-Free-up-your-Work-Hours-featuredimage.webp",
   },
   {
     id: 7,

@@ -64,7 +64,7 @@ export default function HeroSection() {
           <img 
             src="/profile.jpg" 
             alt="Genie Rose Castillo" 
-            className="w-32 h-32 rounded-full mb-4 border-4 border-accent shadow-lg"
+            className="w-40 h-40 rounded-full mb-4 border-4 border-accent shadow-lg"
           />
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Genie Rose Castillo</h2>
           <p className="text-accent text-lg font-semibold">IT Specialist, Full Stack Developer</p>
