@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 
 export default function Navbar() {
@@ -24,10 +25,14 @@ export default function Navbar() {
         <div className="flex justify-between items-center h-16">
           {/* Logo with Profile */}
           <div className="profile-image-nav">
-            <img 
-              src="/profile.jpg" 
-              alt="Genie Rose Castillo" 
+            <Image
+              src="/profile.jpg"
+              alt="Genie Rose Castillo"
               title="Profile Picture"
+              width={48}
+              height={48}
+              className="rounded-full"
+              priority
             />
             <div className="profile-name">
               <h2>Castillo&#39;s Portfolio</h2>

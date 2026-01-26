@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 export default function HeroSection() {
   return (
     <section
@@ -61,10 +63,13 @@ export default function HeroSection() {
       <div className="max-w-4xl mx-auto text-center animate-slideInUp relative z-10">
         {/* Profile Picture and Name */}
         <div className="mb-8 flex flex-col items-center">
-          <img 
-            src="/profile.jpg" 
-            alt="Genie Rose Castillo" 
-            className="w-40 h-40 rounded-full mb-4 border-4 border-accent shadow-lg"
+          <Image
+            src="/profile.jpg"
+            alt="Genie Rose Castillo"
+            width={160}
+            height={160}
+            className="rounded-full mb-4 border-4 border-accent shadow-lg"
+            priority
           />
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">Genie Rose Castillo</h2>
           <p className="text-accent text-lg font-semibold">IT Specialist, Full Stack Developer</p>
