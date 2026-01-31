@@ -6,9 +6,12 @@ export default function ContactSection() {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    subject: "",
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState("");
+  const [loading, setLoading] = useState(false);
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
@@ -22,15 +25,42 @@ export default function ContactSection() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate form submission
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: "", email: "", message: "" });
-    }, 3000);
+    setLoading(true);
+    setError("");
+    
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          to: 'genie.castillo@urios.edu.ph',
+        }),
+      });
+
+      if (response.ok) {
+        setSubmitted(true);
+        setTimeout(() => {
+          setSubmitted(false);
+          setFormData({ name: "", email: "", subject: "", message: "" });
+        }, 3000);
+      } else {
+        const data = await response.json();
+        setError(data.error || "Failed to send message. Please try again.");
+      }
+    } catch (error) {
+      console.error('Error sending message:', error);
+      setError("Failed to send message. Please try again.");
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -89,7 +119,13 @@ export default function ContactSection() {
 
             {submitted && (
               <div className="mb-6 p-4 bg-green-500/20 border border-green-500/50 rounded-lg text-green-300 text-center animate-slideInDown">
-                ✓ Message sent successfully! I&#39;ll get back to you soon.
+                ✓ Message sent successfully! Thank you for reaching out.
+              </div>
+            )}
+
+            {error && (
+              <div className="mb-6 p-4 bg-red-500/20 border border-red-500/50 rounded-lg text-red-300 text-center animate-slideInDown">
+                ✗ {error}
               </div>
             )}
 
@@ -122,6 +158,20 @@ export default function ContactSection() {
               />
             </div>
 
+            {/* Subject */}
+            <div>
+              <label className="block text-sm font-semibold mb-2">Subject</label>
+              <input
+                type="text"
+                name="subject"
+                value={formData.subject}
+                onChange={handleChange}
+                required
+                className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg text-white focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 transition-all"
+                placeholder="Subject of your message"
+              />
+            </div>
+
             {/* Message */}
             <div>
               <label className="block text-sm font-semibold mb-2">Message</label>
@@ -139,9 +189,10 @@ export default function ContactSection() {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full px-6 py-3 bg-accent text-white font-bold rounded-lg hover:bg-blue-600 hover:shadow-lg transition-all duration-300 transform hover:scale-105"
+              disabled={loading}
+              className="w-full px-6 py-3 bg-accent text-white font-bold rounded-lg hover:bg-blue-600 hover:shadow-lg transition-all duration-300 transform hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none"
             >
-              Send Message
+              {loading ? "Sending..." : "Send Message"}
             </button>
             </form>
           </div>
